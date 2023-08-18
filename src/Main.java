@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main extends Enum {
+public class Main extends EnumMonths {
 
   static void menu(){
     System.out.println("Натисніть 1, щоб перевірити чи існує такий місяць");

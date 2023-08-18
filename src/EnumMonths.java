@@ -1,7 +1,4 @@
-public class Enum {
-  enum Seasons {
-    WINTER, SPRING, SUMMER, FALL
-  }
+public class EnumMonths extends EnumSeasons{
 
   enum Months {
     JANUARY(31, Seasons.WINTER), FEBRUARY (28, Seasons.WINTER),
