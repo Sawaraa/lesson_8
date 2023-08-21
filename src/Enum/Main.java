@@ -1,7 +1,20 @@
+package Enum;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Головний клас програми для роботи з перераховуванням місяців та їх характеристиками.
+ *
+ * @author Daniella
+ * @since 2023
+ */
 public class Main extends EnumMonths {
 
+
+  /**
+   * Виводить головне меню програми.
+   */
   static void menu(){
     System.out.println("Натисніть 1, щоб перевірити чи існує такий місяць");
     System.out.println("Натисніть 2, щоб вивести всі місяці які мають таку ж саму пору року");
@@ -14,8 +27,16 @@ public class Main extends EnumMonths {
     System.out.println("Натисніть 9, щоб вивести місяці які мають не парну кількість днів");
     System.out.println("Натисніть 10, щоб перевірити ци місяць має парну кількість днів");
   }
-  public static void main(String[] args) {
 
+  /**
+   * Основний метод програми.
+   *
+   * @param args аргументи командного рядка (не використовуються)
+   * @throws WrongInputConsoleParametersException викидається у разі некоректного вводу
+   */
+  public static void main(String[] args) throws WrongInputConsoleParametersException {
+
+    String message = "Введено не коректні дані";
     Months [] mas_months = Months.values();
     Scanner scanner = new Scanner(System.in);
 
@@ -40,6 +61,10 @@ public class Main extends EnumMonths {
 
           if (!ifExist) {
             System.out.println("Місяць: " + month + " не існує");
+          }
+          /// Exception при вводу цифр або спеціальних символів
+          if(month.matches(".*[0-9!?#].*")){
+            throw new WrongInputConsoleParametersException(message);
           }
           break;
         }
@@ -68,27 +93,37 @@ public class Main extends EnumMonths {
           if(!ifExist){
             System.out.println("Пора року не існує");
           }
+
+          if(seasons.matches(".*[0-9!?#].*")){
+            throw new WrongInputConsoleParametersException(message);
+          }
           break;
         }
 
         case "3": {
-          System.out.println("Введіть кількість днів");
-          scanner = new Scanner(System.in);
-          int day = scanner.nextInt();
+          try {
+            System.out.println("Введіть кількість днів");
+            scanner = new Scanner(System.in);
+            int day = scanner.nextInt();
 
-          boolean ifExist = false;
+            boolean ifExist = false;
 
-          for(Months m : mas_months){
-            if(m.getDays() == day){
-              System.out.println("Місяці з "+ day + " днів: " + m);
-              ifExist = true;
+            for(Months m : mas_months){
+              if(m.getDays() == day){
+                System.out.println("Місяці з "+ day + " днів: " + m);
+                ifExist = true;
+              }
             }
+
+            if(!ifExist){
+              System.out.println("Такий місяць не існує");
+            }
+
+            break;
+          }catch (InputMismatchException e) {
+            throw new WrongInputConsoleParametersException(message);
           }
 
-          if(!ifExist){
-            System.out.println("Такий місяць не існує");
-          }
-          break;
         }
 
         case "4": {
@@ -153,6 +188,10 @@ public class Main extends EnumMonths {
           if(!ifExist){
             System.out.println("Пора року не існує");
           }
+
+          if(seasons.matches(".*[0-9!?#].*")){
+            throw new WrongInputConsoleParametersException(message);
+          }
           break;
         }
 
@@ -183,6 +222,11 @@ public class Main extends EnumMonths {
           if(!ifExist){
             System.out.println("Пора року не існує");
           }
+
+          if(seasons.matches(".*[0-9!?#].*")){
+            throw new WrongInputConsoleParametersException(message);
+          }
+
           break;
         }
 
@@ -229,9 +273,13 @@ public class Main extends EnumMonths {
             System.out.println("Місяць: " + month + " не існує");
           }
 
-
+          if(month.matches(".*[0-9!?#].*")){
+            throw new WrongInputConsoleParametersException(message);
+          }
           break;
         }
+        default:
+          throw new IllegalStateException("Unexpected value: " + scanner.next());
       }
 
     }
