@@ -1,5 +1,6 @@
 package Enum;
 
+import java.io.Console;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -26,6 +27,7 @@ public class Main extends EnumMonths {
     System.out.println("Натисніть 8, щоб вивести місяці які мають парну кількість днів");
     System.out.println("Натисніть 9, щоб вивести місяці які мають не парну кількість днів");
     System.out.println("Натисніть 10, щоб перевірити ци місяць має парну кількість днів");
+    System.out.println("Натисніть 0, для виходу з програми");
   }
 
   /**
@@ -44,6 +46,11 @@ public class Main extends EnumMonths {
       menu();
 
       switch (scanner.next()){
+
+        case "0":{
+          System.out.println("Ви вийшли з програми");
+          return;
+        }
 
         case "1": {
           System.out.println("Введіть місяць");
