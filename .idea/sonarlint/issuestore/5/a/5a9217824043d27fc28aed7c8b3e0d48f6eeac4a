@@ -1,0 +1,18 @@
+
+j
+java:S1192A"ODefine a constant instead of duplicating this literal "ĞœÑ–ÑÑÑ†ÑŒ: " 3 times.(“¤á™ÿÿÿÿÿ
+c
+java:S1192J"MDefine a constant instead of duplicating this literal ".*[0-9!?#].*" 5 times.(­ÇÎû
+x
+java:S1192f"bDefine a constant instead of duplicating this literal "ĞŸĞ¾Ñ€Ğ° Ñ€Ğ¾ĞºÑƒ Ğ½Ğµ Ñ–ÑĞ½ÑƒÑ”" 3 times.(ÇÃµÄ
+w
+java:S1192P"aDefine a constant instead of duplicating this literal "Ğ’Ğ²ĞµĞ´Ñ–Ñ‚ÑŒ Ğ¿Ğ¾Ñ€Ñƒ Ñ€Ğ¾ĞºÑƒ" 3 times.(Ö¿áì
+k	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şùŞ°ûÿÿÿÿ
+g	java:S117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸŞÅó
+g	java:S117Ï"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸŞÅó
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²ßçŒ
+n
+java:S3776'"SRefactor this method to reduce its Cognitive Complexity from 145 to the 15 allowed.(ôœíœıÿÿÿÿ
+Q	java:S125\"<This block of commented-out lines of code should be removed.(Åä¥ê
+G
+java:S1128",Remove this unused import 'java.io.Console'.(æÅªıÿÿÿÿ

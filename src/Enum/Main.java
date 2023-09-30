@@ -1,6 +1,7 @@
 package Enum;
 
 import java.io.Console;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -36,13 +37,24 @@ public class Main extends EnumMonths {
    * @param args аргументи командного рядка (не використовуються)
    * @throws WrongInputConsoleParametersException викидається у разі некоректного вводу
    */
+  private  static ArrayList <Months> mas_months = new ArrayList<>();
+  public static void addMonths(){
+
+    for (Months month : Months.values()) {
+      mas_months.add(month);
+    }
+
+  }
+
   public static void main(String[] args) throws WrongInputConsoleParametersException {
 
     String message = "Введено не коректні дані";
-    Months [] mas_months = Months.values();
+    addMonths();
+    //Months [] mas_months = Months.values();
     Scanner scanner = new Scanner(System.in);
+    boolean exit = true;
 
-    while(true){
+    while(exit){
       menu();
 
       switch (scanner.next()){
